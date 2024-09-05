@@ -1,0 +1,232 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --monitor-color: #333;
+    --screen-color: #0a0a0a;
+    --stand-color: #444;
+    --table-color: #2a2a2a;
+    --accent-color: #8a2be2;
+    --accent-color-light: #9d4edd;
+    --form-bg: rgba(30, 30, 30, 0.8);
+    --input-bg: #2c2c2c;
+    --text-color: #ffffff;
+    --text-color-muted: #a0a0a0;
+  }
+  
+  /* Reset default margins and paddings */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure full viewport coverage and remove scrollbars */
+  html, body {
+    width: 100svw;
+    height: 100svh;
+    overflow: hidden;
+  
+  }
+  
+  .scene {
+   width: 100%;
+   height: 100%;
+   position:absolute;
+   top: 0;
+   left: 0;
+  }
+  
+  .monitorSetup {
+    top: 10svh;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .monitor {
+    background-color: var(--monitor-color);
+    border-radius: 2vh;
+    box-shadow: 0 0 2vh rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    width: 60vw;
+    height: 68svh;
+  }
+  
+  .screen {
+    background-color: var(--screen-color);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color-light) var(--screen-color);
+
+  }
+  
+  
+  .stand {
+    width: 14svw;
+    height: 20vh;
+    max-height: 100px;
+    background-color: var(--stand-color);
+    border-radius: 0 0 1vh 1vh;
+    position: relative;
+  }
+  
+  .table {
+    width: 100%;
+    height: 20vh;
+    background-color: var(--table-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -0.5vh 2vh rgba(0, 0, 0, 0.3);
+  }
+  
+  .purpleAccent {
+    position: absolute;
+    width: 100%;
+    height: 0.5vh;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0 1vh var(--accent-color);
+  }
+  
+  .formContainer {
+    background-color: var(--form-bg);
+    padding: 3vh;
+    border-radius: 1vh;
+    width: 95%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+  }
+  
+  .formContainer h2 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 2.5vh;
+  }
+  
+  .formRow {
+    display: flex;
+    gap: 2vh;
+    margin-bottom: 1vh;
+  }
+  
+  .formGroup {
+    flex: 1;
+  }
+  
+  .formContainer label {
+    display: block;
+    color: var(--text-color-muted);
+    margin-bottom: 0.5vh;
+    font-size: 1.6vh;
+    font-weight: bold;
+  }
+  
+  .formContainer input,
+  .formContainer select {
+    width: 100%;
+    padding: 1vh;
+    border: none;
+    border-radius: 0.5vh;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1.2vh;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 1vh;
+    border: none;
+    border-radius: 0.5vh;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.5vh;
+    font-weight: bold;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+  }
+  
+  .submitButton:hover {
+    background-color: var(--accent-color-light);
+  }
+  
+  .formSwitch {
+    text-align: center;
+    margin-top: 1vh;
+    font-size: 1.2vh;
+    color: var(--text-color-muted);
+    margin-bottom: 4vh;
+    font-weight: bold;
+    font-size: 2vh;
+  }
+  
+  .formSwitch a {
+    color: var(--accent-color);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .formSwitch a:hover {
+    text-decoration: underline;
+  }
+  
+  .labelsN {
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .monitorSetup {
+      width: 90%;
+      height: 70%;
+    }
+    .monitor {
+      width: 100%;
+    }
+    .formContainer {
+      padding: 2vh;
+    }
+    .formContainer h2 {
+      font-size: 4vh;
+    }
+    .formContainer label,
+    .formContainer input,
+    .formContainer select,
+    .submitButton,
+    .formSwitch {
+      font-size: 2.5vh;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .monitorSetup {
+      width: 95%;
+      height: 80%;
+    }
+    .formRow {
+      flex-direction: column;
+    }
+    .formContainer h2 {
+      font-size: 5vh;
+    }
+    .formContainer label,
+    .formContainer input,
+    .formContainer select,
+    .submitButton,
+    .formSwitch {
+      font-size: 3vh;
+    }
+  }
